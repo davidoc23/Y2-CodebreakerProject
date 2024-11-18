@@ -1,0 +1,1 @@
+C:\Users\david\Desktop\CodeBreaker\CodeBreaker\CodeBreaker.UWP\CodeBreaker.UWP.csproj;x86

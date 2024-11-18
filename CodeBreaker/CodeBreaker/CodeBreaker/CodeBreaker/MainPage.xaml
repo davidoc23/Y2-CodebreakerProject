@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CodeBreaker.MainPage">
+
+    <StackLayout BackgroundColor="LightBlue">
+        <Label Text="Code Breaker" x:Name="Heading_Name" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" TextColor="White"  Margin="10"/>
+        <Label Text="Game Over!! Dont forget to save the game. If you want another go please press the Start button below!!" FontSize="Medium" x:Name="Label1" IsVisible="false" VerticalOptions="Center" HorizontalOptions="Center" Margin="50"/>
+        <Image Source="The_End.png" x:Name="EndGameImage" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="false" Margin="20" WidthRequest="300" HeightRequest="300" />
+        <Grid x:Name="GridColourPicker" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="false" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <BoxView Color="Red" Grid.Row="0" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="20">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView Color="Green" Grid.Row="1" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="20">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView Color="Yellow" Grid.Row="2" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="20">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <BoxView Color="Blue" Grid.Row="3" Grid.Column="0" Margin="2" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="20">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ColorGuessBoxView_Tapped"/>
+                </BoxView.GestureRecognizers>
+            </BoxView>
+        </Grid>
+
+        
+        <Grid x:Name="GridTest" HorizontalOptions="Center" Padding="10" VerticalOptions="Center" HeightRequest="600" WidthRequest="300" BackgroundColor="LightCyan">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--Buttons to allow the user to pick a colour.-->
+            <Button x:Name="BtnGuess1"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess2"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess3"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess4"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_0" Grid.Row="0" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck1" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck2" CornerRadius="5" BorderWidth="5" BorderColor="black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck3" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck4" CornerRadius="5" BorderWidth="5" BorderColor="black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="0" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess5"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess6"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess7"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess8"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_1" Grid.Row="1" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck5" CornerRadius="5" BorderWidth="5" BorderColor="black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck6" CornerRadius="5" BorderWidth="5" BorderColor="black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck7" CornerRadius="5" BorderWidth="5" BorderColor="black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck8" CornerRadius="5" BorderWidth="5" BorderColor="black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="1" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess9"  CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess10" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess11" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess12" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_2" Grid.Row="2" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck9" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck10" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck11" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck12" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="2" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess13" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess14" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess15" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess16" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_3" Grid.Row="3" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck13" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck14" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck15" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck16" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="3" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess17" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess18" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess19" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess20" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_4" Grid.Row="4" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck17" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck18" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck19" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck20" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="4" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess21" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess22" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess23" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess24" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_5" Grid.Row="5" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck21" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck22" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck23" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck24" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="5" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess25" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess26" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess27" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess28" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_6" Grid.Row="6" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck25" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck26" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck27" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck28" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="6" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess29" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess30" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess31" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess32" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_7" Grid.Row="7" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck29" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck30" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck31" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck32" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="7" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess33" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess34" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess35" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess36" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_8" Grid.Row="8" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck33" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck34" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck35" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck36" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="8" Grid.Column="8" IsVisible="False"/>
+
+            <Button x:Name="BtnGuess37" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="0" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess38" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="1" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess39" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="2" Clicked="Button_Clicked"/>
+            <Button x:Name="BtnGuess40" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="3" Clicked="Button_Clicked"/>
+
+            <Button x:Name="Btn_Check_9" Grid.Row="9" Grid.Column="4" 
+                         HeightRequest="20" WidthRequest="20" 
+                         HorizontalOptions="Center" VerticalOptions="Center" 
+                         CornerRadius="5" IsVisible="False"
+                         BackgroundColor="Pink"
+                         Clicked="Btn_Check_Clicked"/>
+
+            <Button x:Name="BtnCheck37" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="5" IsVisible="False"/>
+            <Button x:Name="BtnCheck38" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="6" IsVisible="False"/>
+            <Button x:Name="BtnCheck39" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="7" IsVisible="False"/>
+            <Button x:Name="BtnCheck40" CornerRadius="5" BorderWidth="5" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Gray" Grid.Row="9" Grid.Column="8" IsVisible="False"/>
+        </Grid>
+        
+
+        <Grid HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="200" WidthRequest="300">
+            <Label x:Name="Info" Text="If you are finished please select the end button below and then save on the next page!" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+        </Grid>
+
+        <!--Buttons for the user to interact with the game ie Save, exit, etc-->
+        <Button x:Name="Save_Game" Text="Save Game" CornerRadius="5" IsVisible="false" VerticalOptions="Center" HorizontalOptions="Center" Clicked="Save_Game_Clicked" Margin="10"/>
+        <Button x:Name="End_Game" Text="End Game" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center" Clicked="End_Game_Clicked" Margin="10"/>
+        <Button x:Name="Start_Game" Text="Start Game" Padding="5" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center" Clicked="Start_Game_Clicked" IsVisible="false" Margin="10"/>
+        <Button x:Name="Exit_Game" Text="Exit Game" CornerRadius="5" Padding="5" VerticalOptions="Center" HorizontalOptions="Center" Clicked="Exit_Game_Clicked" Margin="10"/>
+        <Label x:Name="Exit_Message" Text="*Note if you click exit now the game will not be saved!*" VerticalOptions="Center" HorizontalOptions="Center" Margin="10" FontSize="Small"/>
+    </StackLayout>
+
+</ContentPage>
